@@ -1,0 +1,36 @@
+<div class="max-w-6xl mx-auto mt-8">
+    <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-400">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Name</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Email</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Password</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Task</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Status</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Comment</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-100">
+          <tr *ngFor="let task of alltasks" class="hover:bg-gray-50">
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{{ task.name }}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{{ task.email }}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{{ task.password }}</td>
+            <td class="px-6 py-4 whitespace-pre-wrap text-sm text-gray-700">{{ task.task }}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold"
+                [ngClass]="{
+                  'text-green-600': task.status === 'Approved',
+                  'text-red-500': task.status === 'Rejected',
+                  'text-yellow-500': task.status === 'Pending'
+                }">
+              {{ task.status }}
+            </td>
+            <td class="px-6 py-4 whitespace-pre-wrap text-sm text-gray-700">{{ task.comment }}</td>
+            <td class="px-6 py-4 whitespace-pre-wrap text-sm text-red-500 cursor-pointer" (click)="deleteTask(task.id)">Delete</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { WorkflowBuilderComponent } from "./components/workflow-builder/workflow-builder.component";
 import { NgxGraphModule } from '@swimlane/ngx-graph';
@@ -7,7 +7,7 @@ import { NgxGraphModule } from '@swimlane/ngx-graph';
 
 @Component({
   selector: 'app-root',
-  imports: [DragDropModule, WorkflowBuilderComponent, NgxGraphModule],
+  imports: [DragDropModule, RouterModule, NgxGraphModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

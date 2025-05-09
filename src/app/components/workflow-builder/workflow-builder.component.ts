@@ -2,16 +2,20 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule } from '@angular/forms';
-import { InputComponent } from "../tasks/input/input.component";
-import { ApprovalComponent } from "../tasks/approval/approval.component";
-import { CallApiComponent } from "../tasks/call-api/call-api.component";
+
+
+import { CallApiComponent } from "../call-api/call-api.component";
+import { RouterModule } from '@angular/router';
+import { InputComponent } from '../input/input.component';
+import { ApprovalComponent } from '../approval/approval.component';
+
 
 @Component({
   selector: 'app-workflow-builder',
   templateUrl: './workflow-builder.component.html',
   styleUrl: './workflow-builder.component.scss',
   standalone: true,
-  imports: [DragDropModule, CommonModule, ReactiveFormsModule, InputComponent, ApprovalComponent, CallApiComponent]
+  imports: [DragDropModule, CommonModule, ReactiveFormsModule, InputComponent, ApprovalComponent, CallApiComponent, RouterModule, InputComponent]
 })
 export class WorkflowBuilderComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: any) {}

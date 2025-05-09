@@ -18,8 +18,11 @@
   </div>
 
   <div class="canvas flex-1 bg-gray-100 p-4 relative overflow-auto">
-    <h2 class="text-lg font-bold mb-4">Workflow Canvas</h2>
-
+    <div class="flex gap-5 justify-between">
+      <h2 class="text-lg font-bold mb-4">Workflow Canvas</h2>
+      <h3 routerLink="/tasks" class="cursor-pointer mt-2 p-2 bg-blue-500 text-white font-small rounded-lg hover:bg-blue-600 transition duration-300 disabled:bg-gray-300">View All Tasks</h3>
+    </div>
+    
     <div 
       *ngFor="let step of workflow; let i = index" 
       [attr.id]="step.id"
@@ -34,6 +37,7 @@
   </div>
 
   <div class="form">
+
       @if (taskStep?.name === 'Manual Input') {
         <div id="input-{{ taskStep.id }}" class="item w-full">
           <app-input />

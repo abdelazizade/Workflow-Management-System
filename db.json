@@ -1,22 +1,12 @@
 {
-  "tasks": [
+  "register": [
     {
-      "id": "b405",
-      "name": "Abdelaziz Adel",
-      "email": "admin@admin.com",
-      "password": "P@ssw0rd@kgroup",
-      "task": "sada",
-      "status": "Approved",
-      "comment": "sdfs"
+      "email": "abdelaziz.adel.m@gmail.com",
+      "password": "123456789"
     },
     {
-      "id": "0c84",
-      "name": "Abdelaziz Adel",
-      "email": "admin@admin.com",
-      "password": "P@ssw0rd@kgroup",
-      "task": "sadas",
-      "status": "Approved",
-      "comment": ""
+      "email": "abdelaziz@gmail.com",
+      "password": "123456789"
     }
   ]
 }

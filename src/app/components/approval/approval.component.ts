@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { TaskService } from '../../../services/task/task.service';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { TaskService } from '../../services/task/task.service';
 
 @Component({
   selector: 'app-approval',
@@ -39,6 +39,7 @@ export class ApprovalComponent {
     task.comment = this.commentForm.value.comment;
     this.submitComment();
     console.log(task);
+    this.taskService.setTask(task)
 
     // this.apiService.postData('tasks', task).subscribe(console.log)
 

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TaskService } from '../../../services/task/task.service';
 import { CommonModule } from '@angular/common';
+import { TaskService } from '../../services/task/task.service';
 
 @Component({
   selector: 'app-input',
