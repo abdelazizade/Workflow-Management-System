@@ -17,8 +17,10 @@ export class AllTasksComponent {
 
   ngOnInit(){
     let userData : any;
+    this.authService.setLogin(null);
     this.authService.login$.subscribe({
       next: (res) => {
+        console.log(res);
         userData = res
       }
     });
@@ -30,11 +32,15 @@ export class AllTasksComponent {
       this.authService.setLogin(userD);
     }
     
-    this.getAllTasks(userData?.email)
+    this.getAllTasks(userData?.email);
   }
   
   async getAllTasks(email: any){
+    console.log(email);
+    
     this.alltasks = await this.tasks.getTasksByUser(email);
+    console.log(this.alltasks);
+    
   }
 
   deleteTask(id: any){

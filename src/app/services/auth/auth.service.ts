@@ -11,9 +11,7 @@ export class AuthService {
 
   authUrl = 'http://localhost:3000/register';
 
-  constructor(@Inject(PLATFORM_ID) private platFrom_id : object){
-    
-  }
+  constructor(@Inject(PLATFORM_ID) private platFrom_id : object){}
 
   userLogin = new BehaviorSubject<any>(null);
   login$ = this.userLogin.asObservable();
@@ -24,15 +22,14 @@ export class AuthService {
     );
 
     console.log(userData);
-    
+    let userD = userData;
     if(!userData){
       if(isPlatformBrowser(this.platFrom_id)){
-        const userD = JSON.parse(localStorage.getItem('userData') || '');
+        userD = JSON.parse(localStorage.getItem('userData') || '');
         console.log(userD);
-        
-        this.userLogin.next(userD);
       }
     }
+    this.userLogin.next(userD);
   };
 
   getUser(){
