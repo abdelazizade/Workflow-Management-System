@@ -21,7 +21,7 @@ export class LoginComponent {
 
   constructor(@Inject(PLATFORM_ID) private platFrom_id : object){}
 
-  allUsers: any;
+  allUsers: any = [];
   loginForm: FormGroup = this.initForm();
   
   initForm(): FormGroup{
