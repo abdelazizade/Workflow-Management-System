@@ -25,6 +25,8 @@ export class CallApiComponent {
   tasks: any;
   editingId: any;
 
+  itISADDING = false;
+
   taskForm = this.fb.group({
     name: [''],
     email: [''],
@@ -32,18 +34,29 @@ export class CallApiComponent {
   });
   
   async saveToAPI() {
+    console.log(this.itISADDING);
+    
+    if(this.itISADDING){
+      this.toastr.error('this task already exists');
+      return
+    }
     let userData : any;
     this.authService.login$.subscribe({
       next: (res) => {
         userData = res;
+        console.log(userData);
+        
       }
     });
     let task =  {};
     this.task$.subscribe(data => task = data);
     let id = Date.now();
-    console.log(id);
+    console.log(userData?.email);
     let addId = {...task, id: id, userId: userData?.email}
         
+    this.toastr.success('Task added successfully');
+    
+    this.itISADDING = true;
     await this.apiService.saveTask(addId);
     
   }

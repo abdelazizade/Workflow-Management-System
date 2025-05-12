@@ -99,7 +99,7 @@ export class ApiService {
     const index = store.index('userId');
     const request = index.getAll(userId);
     console.log(request.onsuccess);
-
+  
     return new Promise((resolve, reject) => {
       request.onsuccess = () => resolve(request.result as Task[]);
       request.onerror = () => reject(request.error);
