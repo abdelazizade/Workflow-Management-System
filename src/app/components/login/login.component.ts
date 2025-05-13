@@ -61,6 +61,6 @@ export class LoginComponent {
       this.toastr.error(`login filed`);
     }
     
-    // this.authService.setLogin(this.loginForm.value); 
+    this.authService.setLogin(this.loginForm.value);
   }
 }

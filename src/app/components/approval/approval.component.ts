@@ -22,6 +22,12 @@ export class ApprovalComponent {
 
   comment: string = '';
 
+  ngOnInit() {
+    this.task$.subscribe((task) => console.log(task)
+    )
+  }
+
+
   initCommentTask() {
     return this.formBuilder.group({
       comment: [''],
