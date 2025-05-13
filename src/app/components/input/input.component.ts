@@ -41,7 +41,7 @@ export class InputComponent {
       email: userData?.email,
       password: userData?.password,
     };
-    console.log(task);
+    console.log("input ", task);
     
     this.taskService.setTask(task);
     this.formTask.reset();
